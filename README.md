@@ -11,10 +11,16 @@ The goal is to create an AI that mirrors your unique writing style, tone, and kn
 - **Local Power:** Optimized for Apple Silicon (M-series) MacBooks.
 
 ## Roadmap
-- [ ] **Data Ingestion:** Tools to export and clean messages (iMessage, WhatsApp, etc.) and text files.
+- [x] **Data Ingestion:** Tools to export and clean messages (iMessage, WhatsApp, etc.) and text files.
 - [ ] **Preprocessing:** Tokenization and formatting for LLM training (e.g., Llama, Mistral).
 - [ ] **Fine-Tuning:** Local training using PEFT/LoRA techniques.
 - [ ] **Inference:** A local chat interface to interact with your personalized model.
+
+## Data Ingestion Usage
+
+You can parse your data using the provided parsers in `src/parsers`:
+- **WhatsApp**: Export a chat without media, then use `WhatsAppParser(my_name="Your Name").parse("path/to/_chat.txt")`
+- **iMessage**: Run `IMessageParser().parse()` to read directly from macOS `chat.db`
 
 ## Prerequisites
 - macOS with Apple Silicon (M1/M2/M3 recommended).
